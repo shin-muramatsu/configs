@@ -31,17 +31,18 @@ yum -y install soci
 ### slapd の起動
 ```
 # chkconfig slapd on
-```
-```
 # service slapd start
 ```
 
 ### 管理者パスワードの設定
 ```
 # slappasswd
+# vi rootpw.ldif [一時ファイル]
 ```
 ```
-vi rootpw.ldif [一時ファイル]
+[rootpw.ldif]
+dn: olcDatabase={0}config,cn=config
+changetype: modify
+add: olcRootPW
+olcRootPW: <your hashed password>
 ```
-
-
