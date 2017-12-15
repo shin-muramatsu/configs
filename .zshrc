@@ -66,7 +66,8 @@ if [ $EMACS ]; then
     PROMPT="%F{green}%~%f %{$fg[red]%}>%{$reset_color%} "
 else
     #PROMPT="%F{green}%~%f %{$fg[white]%}$(toon)%{$reset_color%} "
-    PROMPT='%{$fg[blue]%}[%n@%m]%{$reset_color%}[%F{green}%~%f] '
+    PROMPT='%{$fg[blue]%}[%n@%m]%{$reset_color%}[%F{green}%~%f]
+$ '
 fi
 PROMPT2="%_%% "
 SPROMPT="%r is correct? [n,y,a,e]: "
@@ -215,7 +216,10 @@ ress() {
     fi
 }
 
+# Latex の PATH を追加
+export PATH=/usr/local/texlive/2017/bin/x86_64-darwin:$PATH
+
 # L2vUP用
-export PYENV_ROOT=$HOME/.pyenv
-export PATH=$PYENV_ROOT/bin:$PATH
-eval "$(pyenv init -)"
+#export PYENV_ROOT=$HOME/.pyenv
+#export PATH=$PYENV_ROOT/bin:$PATH
+#eval "$(pyenv init -)"
